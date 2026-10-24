@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Husnaini Marta Wijaya – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6f8;--surface:#fff;--ink:#101828;--muted:#566074;--line:#dde1e8;--accent:#0f5fa8;--accent-soft:#e6f0fa;--side:#0f1b2d;--side-ink:#eef2f7;--side-muted:#9fb0c7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1117;--surface:#151b24;--ink:#e8ecf2;--muted:#9aa4b5;--line:#263040;--accent:#6db2f2;--accent-soft:#14263a;--side:#090e16}}
+:root[data-theme="dark"]{--bg:#0d1117;--surface:#151b24;--ink:#e8ecf2;--muted:#9aa4b5;--line:#263040;--accent:#6db2f2;--accent-soft:#14263a;--side:#090e16}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65;font-size:16px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.wrap{display:grid;grid-template-columns:330px 1fr;min-height:100vh}
+
+/* Sidebar */
+aside{background:var(--side);color:var(--side-ink);padding:48px 32px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:28px}
+.avatar{width:120px;height:120px;border-radius:50%;background:#1d3557;display:grid;place-items:center;font-size:40px;font-weight:700;overflow:hidden;border:3px solid rgba(255,255,255,.18);flex-shrink:0}
+.avatar img{width:100%;height:100%;object-fit:cover}
+aside h1{font-size:28px;line-height:1.2;margin:0 0 12px;font-weight:800;letter-spacing:-.02em}
+.roles{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.roles li{color:var(--side-ink);font-size:14.5px;line-height:1.4;padding-left:14px;position:relative}
+.roles li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--side-muted)}
+.meta{margin:14px 0 0;color:var(--side-muted);font-size:14px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+nav a{display:block;padding:8px 12px;margin-left:-12px;border-radius:8px;color:var(--side-ink);text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover,nav a.on{background:rgba(255,255,255,.09)}
+.mail{color:var(--side-ink);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);width:fit-content;word-break:break-all}
+.mail:hover{border-color:var(--side-ink)}
+.cv{display:inline-block;padding:11px 18px;background:#fff;color:#0f1b2d;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;width:fit-content}
+.cv:hover{background:#dbe7f5}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+
+/* Content */
+main{padding:64px clamp(24px,6vw,88px) 72px;max-width:960px}
+section{margin-bottom:56px}
+h2{font-size:26px;letter-spacing:-.015em;margin:0 0 24px;font-weight:800}
+.about{font-size:17.5px;max-width:68ch}
+.about p{margin:0}
+
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:28px;display:flex;flex-direction:column;gap:20px}
+.tl-item{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.tl-item::before{content:"";position:absolute;left:-36px;top:28px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
+.tl-item h3{margin:0;font-size:18px;line-height:1.35}
+.tl-date{color:var(--accent);background:var(--accent-soft);padding:2px 12px;border-radius:99px;font-size:13px;font-weight:600;white-space:nowrap}
+.tl-sub{color:var(--muted);font-size:15px;font-weight:500;margin:2px 0 12px}
+.tl-item ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.tl-item li{max-width:68ch}
+.tl-item li::marker{color:var(--accent)}
+.tl-item p{margin:0;max-width:68ch}
+
+.bukti{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.bukti figure{margin:0;width:140px}
+.bukti button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);cursor:zoom-in}
+.bukti img{display:block;width:100%;height:96px;object-fit:cover}
+.bukti figcaption{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4}
+.lb{position:fixed;inset:0;background:rgba(5,10,18,.85);display:grid;place-items:center;padding:24px;z-index:50;cursor:zoom-out}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;border-radius:8px}
+
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:32px}
+.contact p{margin:0 0 22px;max-width:62ch;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none}
+:root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{color:#06121f}
+.btn:hover{filter:brightness(1.1)}
+footer{color:var(--muted);font-size:13px;margin-top:40px}
+
+@media (max-width:860px){
+.wrap{grid-template-columns:1fr}
+aside{position:static;height:auto;padding:36px 24px;gap:22px;align-items:flex-start}
+nav ul{flex-direction:row;flex-wrap:wrap}
+nav a{margin-left:0;background:rgba(255,255,255,.07)}
+.side-foot{margin-top:0}
+main{padding:40px 20px 56px}
+.tl{padding-left:22px}
+.tl-item{padding:18px}
+.tl-item::before{left:-30px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <div class="avatar" id="avatar"></div>
+    <div>
+      <h1 id="nama"></h1>
+      <ul class="roles" id="peran"></ul>
+      <p class="meta" id="lokasi"></p>
+    </div>
+    <nav aria-label="Main navigation"><ul id="nav"></ul></nav>
+    <div class="side-foot">
+      <a class="mail" id="mail"></a>
+      <a class="cv" id="cv" hidden>Download CV</a>
+    </div>
+  </aside>
+  <main>
+    <section id="tentang"><h2>About me</h2><div class="about" id="tentang-isi"></div></section>
+    <section id="pengalaman"><h2>Experience</h2><div class="tl" id="pengalaman-isi"></div></section>
+    <section id="pendidikan"><h2>Education</h2><div class="tl" id="pendidikan-isi"></div></section>
+    <section id="kontak"><h2>Let's collaborate</h2>
+      <div class="contact"><p id="kontak-teks"></p><a class="btn" id="kontak-btn">Send email</a></div>
+    </section>
+    <footer id="footer"></footer>
+    <div class="lb" id="lb" hidden><img id="lb-img" alt=""></div>
+  </main>
+</div>
+
+<script>
+/* =====================================================================
+   EDIT HERE ONLY.
+   Replace the text between the quotes "..." with your own data.
+   Do not remove quotes, commas, square brackets [ ] or curly braces { }.
+   ===================================================================== */
+const DATA = {
+  nama: "Husnaini Marta Wijaya",
+  peran: [
+    "Embedded Systems & Robotics Engineer",
+    "Electrical & Maintenance Engineer",
+    "Asset Management & Inventory",
+    "Project Coordinator"
+  ],
+  lokasi: "Surakarta, Indonesia",
+  // Photo from Google Drive (make sure file access is set to "Anyone with the link").
+  foto: "https://drive.google.com/thumbnail?id=1vdT9N2Nl8P_PIew6dtIHYClMqQv4Ok3u&sz=w500",
+  cv: "",              // add your CV file link (https://...) or leave empty to hide the button
+  email: "husnainimartaw@gmail.com",
+
+  tentang: [
+    "Electrical Engineering graduate with hands-on experience supporting 30+ engineering and embedded system projects and supervising 10+ technical projects in electrical systems, automation, sensors, and motors. Skilled in troubleshooting, preventive maintenance, equipment inspection, inventory control, and project monitoring, with a focus on cost control and operational efficiency. Strong in technical documentation and delivering projects on time and to specification. Open to field placement across Indonesia."
+  ],
+
+  // description can be plain text or a list of bullet points [ "...", "..." ]
+  pengalaman: [
+    { jabatan: "Hospital Facilities Maintenance Technician", tempat: "RS Muhammadiyah Wonogiri", periode: "August 2026 – Present",
+      uraian: [
+        "Assisted in electrical maintenance and troubleshooting of panels, generators, AC units, and lighting systems.",
+        "Supported electrical installations, load measurements, and equipment inspections.",
+        "Participated in hospital utility maintenance, including medical gas, drainage, and grounding systems.",
+        "Prepared maintenance forms, inspection checklists, and equipment inventory records.",
+        "Coordinated technical activities with supervisors and vendors."
+      ],
+      // EVIDENCE PHOTOS (optional): add { src: "https://...", ket: "short caption" }
+      bukti: [] },
+    { jabatan: "Engineering Instructor", tempat: "Instar Education", periode: "August 2024 – May 2026",
+      uraian: [
+        "Designed and updated robotics curricula, practical modules, and user guides twice every six months.",
+        "Managed component and equipment procurement for 6 clients.",
+        "Designed and developed 8 microcontroller-based robotics projects.",
+        "Performed C/C++ programming, system integration, testing, and troubleshooting."
+      ] },
+    { jabatan: "Embedded & Robotics Engineer", tempat: "CV. Sona Jaya Techno", periode: "May 2025 – September 2025",
+      uraian: [
+        "Supported 10+ robotics projects through system maintenance and technical troubleshooting.",
+        "Delivered robotics education sessions and provided support for seminars and workshops.",
+        "Developed technical documentation and robot operating manual."
+      ] }
+  ],
+
+  pendidikan: [
+    { jabatan: "Bachelor of Engineering in Electrical Engineering", tempat: "Telkom University", periode: "2022 – 2026",
+      uraian: "Earned a Bachelor of Engineering degree in Electrical Engineering in 3.5 years, with a GPA of 3.41." }
+  ],
+
+  kontak: "I consistently keep up with technological and scientific developments, particularly in engineering. I am ready to work, learn new things, and adapt to different work environments and job requirements. I am highly motivated to develop my skills, open to guidance and feedback, and willing to take on new challenges to make meaningful contributions to the company."
+};
+/* ================== END OF EDIT AREA. Do not change anything below. ================== */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.title = DATA.nama + " – Portfolio";
+$("nama").textContent = DATA.nama;
+$("peran").innerHTML = DATA.peran.map(r => `<li>${esc(r)}</li>`).join("");
+$("lokasi").textContent = DATA.lokasi;
+
+const initials = DATA.nama.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
+$("avatar").textContent = initials;
+if (DATA.foto) {
+  const img = new Image();
+  img.alt = "Photo of " + DATA.nama;
+  img.referrerPolicy = "no-referrer";
+  img.onload = () => { $("avatar").textContent = ""; $("avatar").appendChild(img); };
+  img.src = DATA.foto; /* if loading fails, the initials stay */
+}
+
+$("nav").innerHTML = [["tentang","About"],["pengalaman","Experience"],["pendidikan","Education"],["kontak","Contact"]]
+  .map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join("");
+
+$("mail").textContent = DATA.email;
+$("mail").href = "mailto:" + DATA.email;
+if (DATA.cv) { $("cv").href = DATA.cv; $("cv").hidden = false; }
+
+$("tentang-isi").innerHTML = DATA.tentang.map(p => `<p>${esc(p)}</p>`).join("");
+
+const bukti = list => (list && list.length) ? `<div class="bukti">${list.map(b => `<figure><button type="button" data-src="${esc(b.src)}" data-ket="${esc(b.ket || "")}" aria-label="Enlarge photo"><img src="${esc(b.src)}" alt="${esc(b.ket || "Evidence photo")}" loading="lazy"></button><figcaption>${esc(b.ket || "")}</figcaption></figure>`).join("")}</div>` : "";
+const uraian = u => Array.isArray(u) ? `<ul>${u.map(i => `<li>${esc(i)}</li>`).join("")}</ul>` : `<p>${esc(u)}</p>`;
+const timeline = list => list.map(x => `<div class="tl-item"><div class="tl-head"><h3>${esc(x.jabatan)}</h3><span class="tl-date">${esc(x.periode)}</span></div><div class="tl-sub">${esc(x.tempat)}</div>${uraian(x.uraian)}${bukti(x.bukti)}</div>`).join("");
+$("pengalaman-isi").innerHTML = timeline(DATA.pengalaman);
+$("pendidikan-isi").innerHTML = timeline(DATA.pendidikan);
+
+$("kontak-teks").textContent = DATA.kontak;
+$("kontak-btn").href = "mailto:" + DATA.email;
+$("footer").textContent = "© " + new Date().getFullYear() + " " + DATA.nama;
+
+/* enlarge evidence photo */
+document.addEventListener("click", e => {
+  const b = e.target.closest(".bukti button");
+  if (b) { $("lb-img").src = b.dataset.src; $("lb-img").alt = b.dataset.ket; $("lb").hidden = false; }
+  else if (e.target.closest("#lb")) $("lb").hidden = true;
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("lb").hidden = true; });
+
+/* highlight the current menu item */
+const navLinks = [...document.querySelectorAll("nav a")];
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-30% 0px -60% 0px" });
+document.querySelectorAll("main section").forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
